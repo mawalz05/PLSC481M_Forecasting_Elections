@@ -1,54 +1,4 @@
-#1.) Create 4 vectors: vec, vec2, height, eye_color
 
-
-#2.) Examine the class of each vector
-
-
-#3.) Turn height into ordered and create  height_ordered: factor(height, levels = c("Short", "Medium", "Tall"))
-
-
-#4.) Turn vec2 into a character and integer variable
-
-
-#5.) Subsetting data vec[1] vec[1:3] height_ordered[1:2]
-
-
-#6.) Finding the mean and median vec, vec2, height_ordered, vec2_integer, heigh, eye_color
-
-
-#7.) Get mode for vec, vec2, and height_ordered
-getmode <- function(v) {
-  uniqv <- unique(v)
-  uniqv[which.max(tabulate(match(v, uniqv)))]
-}
-
-
-#8.) Standard deviation and variance of vec and vec2
-
-
-#9.) Hand calculate the standard deviation and variance of vec and vec2
-
-
-#10.) set working directory and Import mtcars ("C:\\Users\\mawal\\Desktop")
-
-
-#11.) View the dataset, head, tail, and structure
-
-
-#12.) Subsetting mtcars [x,x], [x, ] [ ,x]
-
-
-#13.) Three ways to subest with the same output df$model, df$['model'], df[ , 1]
-
-
-#14.) Descriptive Statistics of mtcars: wt
-
-
-#15.) Exporting mtcars write.csv(mtcars, "C:\\Users\\mawal\\Desktop\mtcars_new.csv")
-
-
-
-########################################################
 #1.) Create 4 vectors: vec, vec2, height, eye_color
 vec = c(1, 3, 4, 3, 2, 3, 2, 6, 3)
 vec2 = c(0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1)
@@ -120,7 +70,7 @@ sqrt(var(vec))
 sd(vec)^2
 
 #10.) set working directory and Import mtcars
-setwd("C:\\Users\\mawal\\Desktop")
+setwd("C:\\Users\\mawal\\OneDrive - Binghamton University\\Desktop\\Desktop_Folders\\Teaching\\Forecasting Elections\\Week 2")
 mtcars = read.csv("mtcars.csv")
 
 #11.) View the dataset, head, tail, and structure
@@ -150,12 +100,7 @@ write.csv(mtcars, "C:\\Users\\mawal\\Desktop\mtcars_new.csv")
 
 
 #############################################################
-setwd("C:\\Users\\mawal\\Desktop")
-read.csv("mtcars.csv")
 
-install.packages("XLConnect")
-libeary(XLconnect)
-mtcars = loadWorkbook("mtcars.xlsx")
 
 
 
