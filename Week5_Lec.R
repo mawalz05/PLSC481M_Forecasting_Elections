@@ -1,43 +1,4 @@
-#1.) Install the ggplot package
 
-
-#2.) Create the dem_vote, unem, and gallup vectors
-
-
-#3.) Combine the vectors into a single data frame
-
-
-#4.) Create a scatter plot of unem on x axis and dem_vote on y axis.
-
-
-#5.) Regress unemployment on dem_vote
-
-
-#6.) Add a regression line to the earlier plot without the confidence bounds
-
-
-#7.) Add a regression line to the earlier plot with the confidence bounds
-
-
-#8.) Create a scatter plot with gallup on the x axis
-
-
-#9.) Regress gallup on dem_vote
-
-
-#10.) Add a regression line to the earlier plot without the confidence bounds
-
-
-#11.) Add a regression line to the earlier plot with the confidence bounds
-
-
-#12.) Regress unem and gallup on dem_vote
-
-
-
-
-
-######################################################################################################
 #1.) Install the ggplot package
 install.packages("ggplot2")
 library(ggplot2)
