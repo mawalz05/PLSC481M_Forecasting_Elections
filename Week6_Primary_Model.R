@@ -23,7 +23,7 @@ auto_reg$coeff[1] + norpoth[27, 7]*auto_reg$coeff[2] + norpoth[26, 7]*auto_reg$c
 
 
 #Primary Model Regression
-regr = lm(d_vote ~ inc_primary + noninc_primary + r_vote_1 + r_vote_2 + partisan_adj, data = norpoth)
+regr = lm(r_vote ~ inc_primary + noninc_primary + r_vote_1 + r_vote_2 + partisan_adj, data = norpoth)
 summary(regr)
 
 Trump = regr$coefficients[2]*(.856-mean(norpoth[, 3])) + -1*regr$coefficients[3]*(.284-mean(norpoth[, 4])) + 
@@ -50,7 +50,7 @@ for (i in 1:nrow(norpoth)){
 }
 
 #Rerunning the regressions
-regr = lm(d_vote ~ inc_primary + noninc_primary + r_vote_1 + r_vote_2 + partisan_adj, data = norpoth)
+regr = lm(r_vote ~ inc_primary + noninc_primary + r_vote_1 + r_vote_2 + partisan_adj, data = norpoth)
 summary(regr)
 
 Trump = regr$coefficients[2]*(.65-mean(norpoth[, 3])) + -1*regr$coefficients[3]*(.35-mean(norpoth[, 4])) + 
