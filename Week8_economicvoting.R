@@ -1,41 +1,5 @@
 #1.) Importing the ANES data
-
-
-#2.) Data Wrangling to get the average of VCF0880 per year (pre-election)
-#Question: Would you say that you [and your family]  are better off or worse off financially than you were a year ago.
-
-
-#3.) Caluclating the log number of years of the incmbent party in the white house. 
-
-
-#4.) Combining the ANES and incumbency data
-
-
-#5.) Importing the week 7 polls data to get the incumbent party vote percentage.
-
-
-#6.) filtering the polls data to include only 1972-2016
-
-
-#7.) Combining Polls data with new df.
-
-
-#8.) Regress the incumbent party vote percentage on average VCF0880 score and years in the white house.
-
-
-#9.) Plotting the incumbency voter percentage against VCF0880 score by logwth category
-
-
-
-
-
-
-
-
-
-#######################################################################################################
-#1.) Importing the ANES data
-ANES = read.csv("C:\\Users\\mawal\\Desktop\\ANES.csv")
+ANES = read.csv("C:\\Users\\mawal\\OneDrive - Binghamton University\\Desktop\\Desktop_Folders\\Teaching\\Forecasting Elections\\Week 8\\ANES.csv")
 
 #2.) Data Wrangling to get the average of VCF0880 per year (pre-election)
 #Question: Would you say that you [and your family]  are better off or worse off financially than you were a year ago.
@@ -77,7 +41,7 @@ logwth = log(logwth)
 df = cbind(ANES_2, logwth)
 
 #5.) Importing the week 7 polls data to get the incumbent party vote percentage.
-polls = read.csv("C:\\Users\\mawal\\Desktop\\polls.csv")
+polls = read.csv("C:\\Users\\mawal\\OneDrive - Binghamton University\\Desktop\\Desktop_Folders\\Teaching\\Forecasting Elections\\Week 8\\polls.csv")
 
 #6.) filtering the polls data to include only 1972-2016
 polls = polls %>% 
