@@ -2,6 +2,51 @@ rm(list=ls())
 
 df = read.csv("C:\\Users\\mawal\\OneDrive - Binghamton University\\Desktop\\Desktop_Folders\\Teaching\\Forecasting Elections\\Week 9\\Compiled_data.csv")
 
+############################################################
+#New section - Comaparing Model Errors
+
+########################random_walk
+# Regression
+auto_reg = lm(r_vote ~ r_vote_1 + r_vote_2, data = df)
+
+# Generate predictions 
+ar_prediction = predict(auto_reg, df)
+
+# Adding the predictions to the polls df and viewing 
+new = cbind(df['r_vote'], ar_prediction)
+new
+
+# Create the absolute error
+library(dplyr)
+new %>%
+  mutate(abs_error = abs(r_vote*100 - ar_prediction*100)) %>%
+  summarize(mean(abs_error))
+
+###########################Economic Voting
+#Regression
+econ = lm(inc_vote ~ score + logwth, data = df)
+
+#Generate predictions
+library(dplyr)
+df2 = df %>%
+  filter(Year > 1967)
+
+ec_prediction = predict(econ, df2)
+
+# Adding the predictions to the polls df and viewing 
+new2 = cbind(df2['inc_vote'], ec_prediction)
+new2
+
+# Create the absolute error
+library(dplyr)
+new2 %>%
+  mutate(abs_error = abs(inc_vote - ec_prediction)) %>%
+  summarize(mean(abs_error))
+
+###########################################################
+#PollyVote Model
+###########################################################
+
 #Random Walk
 random_walk = lm(r_vote ~ r_vote_1, data = df)
 summary(random_walk)
@@ -46,5 +91,39 @@ econ_pred
 (rand_pred*100 + autoreg_pred*100 + primary_pred*100 + polls_pred*2 + econ_pred*2)/7
 
 
+############################################################
+#New section - Comaparing Model Errors
+
+########################random_walk
+# Generate predictions 
+rw_prediction = predict(random_walk, df)
+
+# Adding the predictions to the polls df and viewing 
+new = cbind(df['r_vote'], rw_prediction)
+new
+
+# Create the absolute error
+library(dplyr)
+new %>%
+  mutate(abs_error = abs(r_vote*100 - rw_prediction*100)) %>%
+  summarize(mean(abs_error))
+
+###########################Economic Voting
+#Generate predictions
+library(dplyr)
+df2 = df %>%
+  filter(Year > 1967)
+  
+ec_prediction = predict(econ, df2)
+
+# Adding the predictions to the polls df and viewing 
+new2 = cbind(df2['inc_vote'], ec_prediction)
+new2
+
+# Create the absolute error
+library(dplyr)
+new2 %>%
+  mutate(abs_error = abs(inc_vote - ec_prediction)) %>%
+  summarize(mean(abs_error))
 
 
