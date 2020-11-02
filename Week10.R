@@ -26,7 +26,7 @@ new = new %>%
   filter(Year > 1947)
 
 # Creating a column called error that is the prediction minus the incumbent vote
-new$error = new$prediction - new$inc_vote
+new$error = new$inc_vote - new$prediction
 
 # Creating a column called accuracy that puts a 1 if the error is greater than 1.73 and 0 if less than 1.73
 new = new %>%
@@ -35,4 +35,4 @@ new = new %>%
 # Summing the accuracy column and dividing by the toal observations.
 1 - (sum(new$accuracy)/nrow(new))
 
-#67% confident that Trump is going to lose the election.
+#72% confident that Trump is going to lose the election.
